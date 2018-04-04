@@ -3,7 +3,8 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header"
+        style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
@@ -207,7 +208,7 @@ layout: default
 <div id="mydiv" style="width: 1800px;height:800px;"></div>
 
 <script type="text/javascript">
-    window.onload = function() {
+    window.onload = function () {
         //配置
         var config = {
             vx: 3,	//小球x轴速度,正为右，负为左
