@@ -1,14 +1,14 @@
 {
-  "name": "mrchang-blog",
-  "title": "mrchang Blog",
-  "author": "mrchang <mrchang@jetbrains.org.cn>",
+  "name": "vlor-blog",
+  "title": "vlor Blog",
+  "author": "vlor <614316365@qq.com>",
   "version": "1.7.0",
-  "homepage": "http://changdaye.github.io",
+  "homepage": "http://vlor.top/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/changdaye/changdaye.github.io"
+    "url": "https://github.com/VincentZhangy/vlor.github.io"
   },
-  "bugs": "https://github.com/changdaye/changdaye.github.io/issues",
+  "bugs": "https://github.com/VincentZhangy/vlor.github.io/issues",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-less": "~0.11.4",
