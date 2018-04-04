@@ -1,14 +1,14 @@
 # Site settings
-title: MrChang Blog
+title: Vlor Blog
 filing: 粤ICP备17125314号
-SEOTitle: MrChang的博客 | MrChang Blog
+SEOTitle: Vlor的博客 | Vlor Blog
 header-img: img/post-bg-swift.jpg
-email: mrchang@jetbrains.org.cn
+email: 614316365@qq.com
 description: "这家伙总以为自己是个天才，实际并不比别人聪明多少！"
 keyword: "MrChang, MrChangBlog, MrChang的博客, Java Dev ,changdaye , mrchang "
-url: "http://www.jetbrains.org.cn"          # your host, for absolute URL
+url: "http://vlor.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/changdaye/changdaye.github.io.git" # you code repository
+github_repo: "https://github.com/VincentZhangy/vlor.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -24,11 +24,11 @@ githubPageUrl: https://pages.github.com/
 
 # SNS settings
 RSS: false
-weibo_username:     5819954295
-zhihu_username:     chang-da-ye-18
-github_username:    changdaye
+weibo_username:     VincentLoveReeta
+zhihu_username:
+github_username:    VincentZhangy
 #facebook_username:  baiying.qiu.7
-jianshu_username:   be856ffdd469
+jianshu_username:
 #twitter_username:   qiubaiying
 
 
