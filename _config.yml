@@ -100,6 +100,9 @@ service-worker: true
 # Friends
 friends: [
     {
+        title: "MrChang Blog",
+        href: "https://http://blog.jetbrains.org.cn/"
+    },{
         title: "jianghoufeng",
         href: "https://github.com/ophina"
     },{
@@ -120,9 +123,6 @@ friends: [
     },{
              title: "忘lele",
              href: "https://gmle.club/"
-    },{
-             title: "长云",
-             href: "http://vlor.top/"
     },{
              title: "李牧牧",
              href: "http://limumu.me/"
