@@ -20,7 +20,7 @@ layout: default
 
 <!-- Main Content -->
 <div class="container">
-    <div id="mydiv" class="row">
+    <div class="row">
         {% if site.sidebar == false %}
         <!-- NO SIDEBAR -->
         <!-- PostList Container -->
@@ -207,8 +207,8 @@ layout: default
 
 <script type="text/javascript">
     window.onload = function () {
-        document.getElementById("mydiv").setAttribute("height", document.body.clientHeight);
-        document.getElementById("mydiv").setAttribute("width", document.body.clientWidth);
+        // document.getElementById("mydiv").setAttribute("height", document.body.clientHeight);
+        // document.getElementById("mydiv").setAttribute("width", document.body.clientWidth);
         //配置
         var config = {
             vx: 3,	//小球x轴速度,正为右，负为左
