@@ -1,6 +1,6 @@
 # Site settings
 title: Vlor Blog
-filing: 粤ICP备17125314号
+#filing: 粤ICP备17125314号
 SEOTitle: Vlor的博客 | Vlor Blog
 header-img: img/post-bg-swift.jpg
 email: 614316365@qq.com
@@ -16,8 +16,8 @@ sidebar-about-description: "这家伙总以为自己是个天才，实际并不�
 sidebar-avatar: /img/about-BY-gentle.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 ##cdn
-#cdn: 阿里云提供CDN加速服务
-#cdnUrl: https://www.aliyun.com/product/cdn?spm=5176.7933691.765261.407.79w7vI
+cdn: 阿里云提供CDN加速服务
+cdnUrl: https://www.aliyun.com/product/cdn?spm=5176.7933691.765261.407.79w7vI
 
 githubPage: GitHubPage提供构建部署服务
 githubPageUrl: https://pages.github.com/

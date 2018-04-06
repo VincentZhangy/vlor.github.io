@@ -92,9 +92,9 @@
                 </ul>
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
-                    <br>
-                    备案号：<a href="http://www.miitbeian.gov.cn/">{{ site.filing }}</a>
-                    <br>
+                    <!--<br>-->
+                    <!--备案号：<a href="http://www.miitbeian.gov.cn/">{{ site.filing }}</a>-->
+                    <!--<br>-->
 
                     Theme on <a href="{{ site.github_repo }}">GitHub</a> |
                     <iframe
@@ -102,14 +102,98 @@
                             frameborder="0" scrolling="0" width="100px" height="20px"
                             src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ site.github_username }}.github.io&type=star&count=true">
                     </iframe>
+                    博客已稳定运行：<span id="htmer_time" style="color: red;"></span>
+                    <script type="text/javascript">
+                        var caution=false
+                        function setCookie(name,value,expires,path,domain,secure)
+                        {
+                            var curCookie=name+"="+escape(value) +
+                                ((expires)?";expires="+expires.toGMTString() : "") +
+                                ((path)?"; path=" + path : "") +
+                                ((domain)? "; domain=" + domain : "") +
+                                ((secure)?";secure" : "")
+                            if(!caution||(name + "=" + escape(value)).length <= 4000)
+                            {
+                                document.cookie = curCookie
+                            }
+                            else if(confirm("Cookie exceeds 4KB and will be cut!"))
+                            {
+                                document.cookie = curCookie
+                            }
+                        }
+                        function getCookie(name)
+                        {
+                            var prefix = name + "="
+                            var cookieStartIndex = document.cookie.indexOf(prefix)
+                            if (cookieStartIndex == -1)
+                            {
+                                return null
+                            }
+                            var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+                            if(cookieEndIndex == -1)
+                            {
+                                cookieEndIndex = document.cookie.length
+                            }
+                            return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+                        }
+                        function deleteCookie(name, path, domain)
+                        {
+                            if(getCookie(name))
+                            {
+                                document.cookie = name + "=" +
+                                    ((path) ? "; path=" + path : "") +
+                                    ((domain) ? "; domain=" + domain : "") +
+                                    "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+                            }
+                        }
+                        function fixDate(date)
+                        {
+                            var base=new Date(0)
+                            var skew=base.getTime()
+                            if(skew>0)
+                            {
+                                date.setTime(date.getTime()-skew)
+                            }
+                        }
+                        var now=new Date()
+                        fixDate(now)
+                        now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+                        var visits = getCookie("counter")
+                        if(!visits)
+                        {
+                            visits=1;
+                        }
+                        else
+                        {
+                            visits=parseInt(visits)+1;
+                        }
+                        setCookie("counter", visits, now)
+                        document.write("您是到访的第" + visits + "位用户！")
+                    </script>
                     <br>
-                    本站由：<a href="{{ site.cdnUrl }}">{{ site.cdn }}</a>,<a href="{{ site.githubPageUrl }}">{{ site.githubPage }}</a>
+                    本站由：<a href="{{ site.githubPageUrl }}">{{ site.githubPage }}</a>
 
                 </p>
             </div>
         </div>
     </div>
 </footer>
+
+<script type="text/javascript" language="javascript">
+    function setTime() {
+        // 博客创建时间秒数，时间格式中，月比较特殊，是从0开始的，所以想要显示5月，得写4才行，如下
+        var create_time = Math.round(new Date(Date.UTC(2017, 8, 5, 0, 0, 0))
+            .getTime() / 1000);
+        // 当前时间秒数,增加时区的差异
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+            + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+            + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+</script>
 
 <!-- jQuery -->
 <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
