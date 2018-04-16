@@ -1,0 +1,31 @@
+---
+layout:     post
+title:     	Echart
+subtitle:    "\"Echart使用记录 \""
+date:       2018-04-16
+author:     Vlor
+header-img: img/post-bg-e2e-ux.jpg
+catalog: true
+tags:
+    - echart
+
+---
+
+#echart 线堆叠
+          series : [
+							{
+								name : '目标投诉率',
+								type : 'line',
+								stack : '总量1',
+								data : [ 12, 32, 10, 34, 20, 30 ]
+							},
+							{
+								name : '实际投诉率',
+								type : 'line',
+								stack : '总量2',  //改变stack值，线将不堆叠，否则会堆叠上去
+								data : [ 22, 18, 39, 23, 29, 33 ]
+							}
+						]
+           
+
+#
