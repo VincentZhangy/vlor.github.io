@@ -101,7 +101,7 @@ service-worker: true
 friends: [
     {
         title: "MrChang Blog",
-        href: "https://http://blog.jetbrains.org.cn/"
+        href: "http://blog.jetbrains.org.cn/"
     },{
         title: "jianghoufeng",
         href: "https://github.com/ophina"
