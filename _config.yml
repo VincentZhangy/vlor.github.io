@@ -4,7 +4,7 @@ title: Vlor Blog
 SEOTitle: Vlor的博客 | Vlor Blog
 header-img: img/post-bg-taylorswift9.jpg
 email: 614316365@qq.com
-description: "这家伙总以为自己是个天才，实际并不比别人聪明多少！"
+description: "志不立，天下无可成之事。"
 keyword: "MrChang, MrChangBlog, MrChang的博客, Java Dev ,changdaye , mrchang "
 url: "http://vlor.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -12,7 +12,7 @@ github_repo: "https://github.com/VincentZhangy/vlor.github.io.git" # you code re
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "这家伙总以为自己是个天才，实际并不比别人聪明多少！"
+sidebar-about-description: "志不立，天下无可成之事。"
 sidebar-avatar: /img/about-BY-gentle.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 ##cdn
