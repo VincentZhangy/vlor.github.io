@@ -90,8 +90,16 @@
                     </li>
                     {% endif %}
                 </ul>
+                <div id="result1"></div>
                 <p class="copyright text-muted">
                     <script type="text/javascript">
+                        if (localStorage.pagecount){
+                            localStorage.pagecount=Number(localStorage.pagecount)+1;
+                        }
+                        else{
+                            localStorage.pagecount=1;
+                        }
+                        document.getElementById("result1").innerHTML=localStorage.pagecount;
                         var caution=false
                         function setCookie(name,value,expires,path,domain,secure)
                         {

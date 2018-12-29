@@ -13,7 +13,7 @@ github_repo: "https://github.com/VincentZhangy/vlor.github.io.git" # you code re
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "志不立，天下无可成之事。"
-sidebar-avatar: /img/about-BY-gentle.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-ZY-gentle.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 ##cdn
 cdn: 阿里云提供CDN加速服务
