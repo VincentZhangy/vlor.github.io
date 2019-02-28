@@ -91,16 +91,6 @@
                     {% endif %}
                 </ul>
                 <p class="copyright text-muted">
-                    本站已访问<div id="result1"></div>次
-                    <script type="text/javascript">
-                        if (localStorage.pagecount){
-                            localStorage.pagecount=Number(localStorage.pagecount)+1;
-                        }
-                        else{
-                            localStorage.pagecount=1;
-                        }
-                        document.getElementById("result1").innerHTML=localStorage.pagecount;
-                    </script>
                     &nbsp;&nbsp;博客已稳定运行：<span id="htmer_time" style="color: red;"></span>
                     <br/>
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
