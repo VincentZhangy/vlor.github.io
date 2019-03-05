@@ -90,7 +90,7 @@ layout: default
 
                 <hr style="visibility: hidden;">
 
-                <center>
+                <!--<center>
                     <div id="cyReward" role="cylabs" data-use="reward"></div>
                 </center>
 
@@ -101,7 +101,7 @@ layout: default
                 <div id="cyReping" role="cylabs" data-use="reping"></div>
 
 
-                <!--PC和WAP自适应版-->
+                &lt;!&ndash;PC和WAP自适应版&ndash;&gt;
                 <div id="SOHUCS"></div>
                 <script type="text/javascript">
                     (function(){
@@ -114,6 +114,12 @@ layout: default
 
                 <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
                 <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyu6L9LtL"></script>
+                -->
+                <!-- 存储服务 -->
+                <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js"></script>
+                <!-- 实时消息服务 -->
+                <script src="//cdn.jsdelivr.net/npm/leancloud-realtime@4.2.1/dist/realtime.browser.min.js"></script>
+                <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-live-query-min.js"></script>
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -195,6 +201,12 @@ layout: default
 {% if site.duoshuo_username %}
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
+    // 存储服务
+    var { Query, User } = AV;
+    AV.init('MGeUbqHLtMITn2JVpysj2EgF-gzGzoHsz', 'AKBTnCP4RIvdvfu3gEWOUJ08');
+    // 实时消息服务
+    var { Realtime, TextMessage } = AV;
+
     // dynamic User by Hux
     var _user = '{{site.duoshuo_username}}';
 
