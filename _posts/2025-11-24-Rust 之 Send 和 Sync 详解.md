@@ -67,7 +67,7 @@ let rc = Rc::new(42);
 
 * Rc<T> - 非原子引用计数
 * *const T, *mut T - 裸指针
-* Cell<T> - 非线程安全的内部可变性
+* RefCell<T> - 非线程安全的内部可变性
 
 ## Sync Trait详解
 ### 定义与作用
@@ -102,6 +102,7 @@ let cell = RefCell::new(42);
 ### 常见非Sync类型：
 
 * Rc<T> - 非原子引用计数
+* *const T, *mut T - 裸指针
 * Cell<T>, RefCell<T> - 非线程安全的内部可变性
 
 ## 自动推导机制
@@ -173,7 +174,10 @@ fn main() {
 |Arc<T> |	✓ |	✓ |	原子引用计数 |
 |Mutex<T> |	✓ |	✓ |	互斥锁 |
 |Cell<T> |	✓ |	✗ |	线程内部可变性 |
-|RefCell<T> |	✓ |	✗ |	线程内部可变性 |
+|RefCell<T> |	✗ |	✗ |	非线程安全的内部可变性 |
+|MutexGuard<'a, T> |	✓ |	✗ |	锁守卫，可转移但不能共享 |
+|&mut T |	✓ |	✗ |	可变引用（当T是Send）|
+|Raw pointer (*const T, *mut T) |	✗ |	✗ |	裸指针 |
 
 ### 常见错误解决
 ```rust
@@ -188,11 +192,11 @@ thread::spawn(move || { println!("{}", arc); });
 ```
 
 ## 总结要点
-1、Send关注所有权转移：能否安全地将值移动到另一个线程
-2、Sync关注引用共享：能否安全地在多个线程间共享不可变引用
-3、自动推导：编译器自动为复合类型实现，基于字段类型
-4、编译期检查：所有并发安全问题在编译时发现
-5、安全抽象：通过标准库类型（Arc、Mutex等）构建安全并发程序
+1. Send关注所有权转移：能否安全地将值移动到另一个线程
+2. Sync关注引用共享：能否安全地在多个线程间共享不可变引用
+3. 自动推导：编译器自动为复合类型实现，基于字段类型
+4. 编译期检查：所有并发安全问题在编译时发现
+5. 安全抽象：通过标准库类型（Arc、Mutex等）构建安全并发程序
 
 ## 进阶资源
 * [The Rust Programming Language - 并发章节](https://doc.rust-lang.org/book/ch16-00-concurrency.html)
