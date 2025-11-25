@@ -58,17 +58,25 @@ layout: default
                 <div class="post-heading">
                     <div class="tags">
                         {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        <a
+                            class="tag"
+                            href="{{ site.baseurl }}/tags/#{{ tag }}"
+                            title="{{ tag }}"
+                            >{{ tag }}</a
+                        >
                         {% endfor %}
                     </div>
                     <h1>{{ page.title }}</h1>
-                    {% comment %}
-                    always create a h2 for keeping the margin , Hux
-                    {% endcomment %}
-                    {% comment %} if page.subtitle {% endcomment %}
+                    {% comment %} always create a h2 for keeping the margin ,
+                    Hux {% endcomment %} {% comment %} if page.subtitle {%
+                    endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta"
+                        >Posted by {% if page.author %}{{ page.author }}{% else
+                        %}{{ site.title }}{% endif %} on {{ page.date | date:
+                        "%B %-d, %Y" }}</span
+                    >
                 </div>
             </div>
         </div>
@@ -79,72 +87,183 @@ layout: default
 <article>
     <div class="container">
         <div class="row">
-
             <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
+            <div
+                class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container"
+            >
                 {{ content }}
 
-                <hr style="visibility: hidden;">
+                <hr style="visibility: hidden" />
 
                 <center>
                     <div id="cyReward" role="cylabs" data-use="reward"></div>
                 </center>
 
-                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
-                <script>window._bd_share_config = {"common": {"bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "32"}, "share": {}, "image": {"viewList": ["weixin", "tsina", "sqq", "tqq"], "viewText": "分享到：", "viewSize": "16"}, "selectShare": {"bdContainerClass": null, "bdSelectMiniList": ["weixin", "tsina", "sqq", "tqq"]}};
-                with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+                <div class="bdsharebuttonbox">
+                    <a href="#" class="bds_more" data-cmd="more"></a
+                    ><a
+                        href="#"
+                        class="bds_weixin"
+                        data-cmd="weixin"
+                        title="分享到微信"
+                    ></a
+                    ><a
+                        href="#"
+                        class="bds_tsina"
+                        data-cmd="tsina"
+                        title="分享到新浪微博"
+                    ></a
+                    ><a
+                        href="#"
+                        class="bds_sqq"
+                        data-cmd="sqq"
+                        title="分享到QQ好友"
+                    ></a
+                    ><a
+                        href="#"
+                        class="bds_tqq"
+                        data-cmd="tqq"
+                        title="分享到腾讯微博"
+                    ></a>
+                </div>
+                <script>
+                    window._bd_share_config = {
+                        common: {
+                            bdSnsKey: {},
+                            bdText: "",
+                            bdMini: "2",
+                            bdMiniList: false,
+                            bdPic: "",
+                            bdStyle: "0",
+                            bdSize: "32",
+                        },
+                        share: {},
+                        image: {
+                            viewList: ["weixin", "tsina", "sqq", "tqq"],
+                            viewText: "分享到：",
+                            viewSize: "16",
+                        },
+                        selectShare: {
+                            bdContainerClass: null,
+                            bdSelectMiniList: ["weixin", "tsina", "sqq", "tqq"],
+                        },
+                    };
+                    with (document)
+                        (0)[
+                            ((
+                                getElementsByTagName("head")[0] || body
+                            ).appendChild(createElement("script")).src =
+                                "http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=" +
+                                ~(-new Date() / 36e5))
+                        ];
+                </script>
 
                 <div id="cyReping" role="cylabs" data-use="reping"></div>
-
 
                 <!--PC和WAP自适应版-->
                 <div id="SOHUCS"></div>
                 <script type="text/javascript">
-                    (function(){
-                        var appid = 'cyu6L9LtL';
-                        var conf = 'prod_ce25d66e90ed3a25b92a389c89d642c6';
-                        var width = window.innerWidth || document.documentElement.clientWidth;
+                    (function () {
+                        var appid = "cyu6L9LtL";
+                        var conf = "prod_ce25d66e90ed3a25b92a389c89d642c6";
+                        var width =
+                            window.innerWidth ||
+                            document.documentElement.clientWidth;
                         if (width < 960) {
-                            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+                            window.document.write(
+                                '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+                                    appid +
+                                    "&conf=" +
+                                    conf +
+                                    '"><\/script>',
+                            );
+                        } else {
+                            var loadJs = function (d, a) {
+                                var c =
+                                    document.getElementsByTagName("head")[0] ||
+                                    document.head ||
+                                    document.documentElement;
+                                var b = document.createElement("script");
+                                b.setAttribute("type", "text/javascript");
+                                b.setAttribute("charset", "UTF-8");
+                                b.setAttribute("src", d);
+                                if (typeof a === "function") {
+                                    if (window.attachEvent) {
+                                        b.onreadystatechange = function () {
+                                            var e = b.readyState;
+                                            if (
+                                                e === "loaded" ||
+                                                e === "complete"
+                                            ) {
+                                                b.onreadystatechange = null;
+                                                a();
+                                            }
+                                        };
+                                    } else {
+                                        b.onload = a;
+                                    }
+                                }
+                                c.appendChild(b);
+                            };
+                            loadJs(
+                                "http://changyan.sohu.com/upload/changyan.js",
+                                function () {
+                                    window.changyan.api.config({
+                                        appid: appid,
+                                        conf: conf,
+                                    });
+                                },
+                            );
+                        }
+                    })();
+                </script>
 
-
-                <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
-                <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyu6L9LtL"></script>
+                <script
+                    type="text/javascript"
+                    charset="utf-8"
+                    src="https://changyan.itc.cn/js/lib/jquery.js"
+                ></script>
+                <script
+                    type="text/javascript"
+                    charset="utf-8"
+                    src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyu6L9LtL"
+                ></script>
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                            Previous<br>
+                        <a
+                            href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="{{page.previous.title}}"
+                        >
+                            Previous<br />
                             <span>{{page.previous.title}}</span>
                         </a>
                     </li>
-                    {% endif %}
-                    {% if page.next.url %}
+                    {% endif %} {% if page.next.url %}
                     <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                            Next<br>
+                        <a
+                            href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="{{page.next.title}}"
+                        >
+                            Next<br />
                             <span>{{page.next.title}}</span>
                         </a>
                     </li>
                     {% endif %}
                 </ul>
-
             </div>
-
 
             <!-- Side Catalog Container -->
             {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
+            <div
+                class="col-lg-2 col-lg-offset-0 visible-lg-block sidebar-container catalog-container"
+            >
                 <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
+                    <hr class="hidden-sm hidden-xs" />
                     <h5>
                         <a class="catalog-toggle" href="#">CATALOG</a>
                     </h5>
@@ -154,31 +273,32 @@ layout: default
             {% endif %}
 
             <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+            <div
+                class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+            >
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
                 <section>
-                    <hr class="hidden-sm hidden-xs">
+                    <hr class="hidden-sm hidden-xs" />
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        {% for tag in site.tags %}
-                        {% if tag[1].size > {{site.featured-condition-size}} %}
-                        <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                        {% for tag in site.tags %} {% if tag[1].size >
+                        {{site.featured-condition-size}} %}
+                        <a
+                            href="/tags/#{{ tag[0] }}"
+                            title="{{ tag[0] }}"
+                            rel="{{ tag[1].size }}"
+                        >
                             {{ tag[0] }}
                         </a>
-                        {% endif %}
-                        {% endfor %}
+                        {% endif %} {% endfor %}
                     </div>
                 </section>
                 {% endif %}
 
                 <!-- Friends Blog -->
                 {% if site.friends %}
-                <hr>
+                <hr />
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
                     {% for friend in site.friends %}
@@ -191,29 +311,6 @@ layout: default
     </div>
 </article>
 
-
-{% if site.duoshuo_username %}
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User by Hux
-    var _user = '{{site.duoshuo_username}}';
-
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user};
-    (function () {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';
-        ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
-
-
 {% if site.disqus_username %}
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -223,29 +320,34 @@ layout: default
     var disqus_url = "{{site.url}}{{page.url}}";
 
     (function () {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
+        var dsq = document.createElement("script");
+        dsq.type = "text/javascript";
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+        (
+            document.getElementsByTagName("head")[0] ||
+            document.getElementsByTagName("body")[0]
+        ).appendChild(dsq);
     })();
 </script>
 <!-- disqus 公共JS代码 end -->
-{% endif %}
-
-
-{% if site.anchorjs %}
+{% endif %} {% if site.anchorjs %}
 <!-- async load function -->
 <script>
     function async(u, c) {
-        var d = document, t = 'script',
+        var d = document,
+            t = "script",
             o = d.createElement(t),
             s = d.getElementsByTagName(t)[0];
         o.src = u;
         if (c) {
-            o.addEventListener('load', function (e) {
-                c(null, e);
-            }, false);
+            o.addEventListener(
+                "load",
+                function (e) {
+                    c(null, e);
+                },
+                false,
+            );
         }
         s.parentNode.insertBefore(o, s);
     }
