@@ -74,15 +74,7 @@ service-worker: true
 # Friends
 friends:
   [
-    { title: "MrChang Blog", href: "http://blog.jetbrains.org.cn/" },
     { title: "jianghoufeng", href: "https://github.com/ophina" },
     { title: "hsweb", href: "https://github.com/zhou-hao" },
     { title: "憧憬点滴记忆", href: "https://www.licoy.cn/" },
-    { title: "少将博客", href: "https://www.whatled.com/" },
-    { title: "BMAdmin 企业后台管理系统", href: "http://www.bmadmin.com/" },
-    { title: "夜村溪", href: "https://www.rojackse.top/" },
-    { title: "忘lele", href: "https://gmle.club/" },
-    { title: "李牧牧", href: "http://limumu.me/" },
-    { title: "mdtr2pdf", href: "http://www.mdtr2pdf.com/" },
-    { title: "少将博客", href: "https://jiangshaobo.cn/" },
   ]
