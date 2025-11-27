@@ -2,28 +2,37 @@
 layout: page
 title: "About"
 description: "Hey, this is Vlor ZY."
-header-img: "img/home-bg-o.jpg"
+header-img: "img/about_bg_14.jpg"
 ---
 
 <!-- Language Selector -->
-<select class="sel-lang" onchange="onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese</option>
-    <option value="1"> 英文 English</option>
+<select
+    class="sel-lang"
+    onchange="onLanChange(this.options[this.options.selectedIndex].value)"
+>
+    <option value="0" selected>中文 Chinese</option>
+    <option value="1">英文 English</option>
 </select>
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-
     <!--copied from markdown -->
-    <blockquote><p>冰冻三尺 非一日之寒，<br>
-        积土成山 非斯须之作</p></blockquote>
+    <blockquote>
+        <p>
+            冰冻三尺 非一日之寒，<br />
+            积土成山 非斯须之作
+        </p>
+    </blockquote>
 
-    <p>Hey，我是<strong>Vlor</strong>，一只java程序猿，现在杭州工作。</p>
+    <p>Hey，我是<strong>Vlor</strong>，一只无所事事的程序猿。</p>
 
-    <p>这是我的利用 <a href="https://pages.github.com/">GitHub Pages</a> 与 <a href="http://jekyll.com.cn/">Jekyll</a> 搭建的 个人博客。我在GitHub主页<a href="https://github.com/VincentZhangy">👉GitHub·BY</a>。</p>
-
-    <p>工作、学习之余，我喜欢看电影和看球赛，我最喜欢的球队是巴塞罗那，最喜欢的球星</p>
-    <p>是梅西，我也喜欢听歌，听欧美的歌比较多一些，以前很喜欢Eminem，后来也很喜欢Taylor Swift。</p>
+    <p>
+        这是我的利用 <a href="https://pages.github.com/">GitHub Pages</a> 与
+        <a href="http://jekyll.com.cn/">Jekyll</a> 搭建的
+        个人博客。我在GitHub主页<a href="https://github.com/VincentZhangy"
+            >👉GitHub·BY</a
+        >。
+    </p>
 
     <h5>Talks</h5>
 
@@ -36,14 +45,19 @@ header-img: "img/home-bg-o.jpg"
 
 <!-- English Version -->
 <div class="en post-container">
-    <blockquote><p>Yet another iOS Developer. <br>
-        Yet another Life-long Student.</p></blockquote>
+    <blockquote>
+        <p>
+            Yet another iOS Developer. <br />
+            Yet another Life-long Student.
+        </p>
+    </blockquote>
 
-    <p>Hi, I am <strong>vlor</strong>. I'm an JAVA Developer.I now working in HangZhou Supermo Intelligent Logistics Technology Co., Ltd.</p>
+    <p>Hi, I am <strong>vlor</strong>. I'm an Simple Developer.</p>
 
-    <p>This is my personal blog, through making Github Pages GitHub 👉 <a href="https://github.com/VincentZhangy">Github</a>.</p>
-
-    <p>I am a sports enthusiast, I like fitness, running and tae kwon do, sports is my full of vitality.</p>
+    <p>
+        This is my personal blog, through making Github Pages GitHub 👉
+        <a href="https://github.com/VincentZhangy">Github</a>.
+    </p>
 
     <h5>Talks</h5>
 
@@ -54,6 +68,23 @@ header-img: "img/home-bg-o.jpg"
     </ul>
 </div>
 
+<script
+    src="https://giscus.app/client.js"
+    data-repo="VincentZhangy/vlor.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkxMjc5OTA3ODc="
+    data-category="General"
+    data-category-id="DIC_kwDOB6D8A84CzCsF"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="noborder_light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async
+></script>
+
 <!-- Handle Language Change -->
 <script type="text/javascript">
     // get nodes
@@ -62,7 +93,7 @@ header-img: "img/home-bg-o.jpg"
     var $select = document.querySelector("select");
 
     // bind hashchange event
-    window.addEventListener('hashchange', _render);
+    window.addEventListener("hashchange", _render);
 
     // handle render
     function _render() {
@@ -84,80 +115,12 @@ header-img: "img/home-bg-o.jpg"
     // handle select change
     function onLanChange(index) {
         if (index == 0) {
-            window.location.hash = "#zh"
+            window.location.hash = "#zh";
         } else {
-            window.location.hash = "#en"
+            window.location.hash = "#en";
         }
     }
 
     // init
     _render();
 </script>
-
-
-{% if site.duoshuo_username %}
-<!-- 多说评论框 start -->
-<div class="comment">
-    <!-- This id is used for indexing my loss comments forcedly -->
-    <div class="ds-thread"
-         {% if site.duoshuo_username==
-    "qiubaiying" %}
-    data-thread-id="0ee040117ec56f17aa7e2523d1eae19b"
-    {% else %}
-    <!-- U can just use this key generated to index comments at page about -->
-    data-thread-key="{{site.duoshuo_username}}/about"
-    {% endif %}
-
-    data-title="{{page.title}}"
-    data-url="{{site.url}}/about/">
-</div>
-</div>
-<!-- 多说评论框 end -->
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = '{{site.duoshuo_username}}';
-
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user};
-    (function () {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';
-        ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
-
-
-{% if site.disqus_username %}
-<!-- disqus 评论框 start -->
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread" align="center">
-        评论及查看评论需要翻墙。
-    </div>
-</div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function () {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
