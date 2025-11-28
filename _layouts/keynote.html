@@ -185,6 +185,11 @@ layout: default
 {% if site.anchorjs %}
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>
+  anchors.options = {
+      visible: 'always',
+      placement: 'right',
+      icon: '#'
+  };
   anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
 </script>
 <!-- async load function -->
