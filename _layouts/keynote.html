@@ -111,11 +111,11 @@ layout: default
 
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
-                <div class="comment">
+                <!--<div class="comment">
                     <div id="disqus_thread" class="disqus-thread" align="center">
                         评论及查看评论需要翻墙。
                     </div>
-                </div>
+                </div>-->
                 <!-- disqus 评论框 end -->
                 {% endif %}
 
@@ -181,12 +181,14 @@ layout: default
     resize();
 </script>
 
-{% if site.disqus_username %}
-
 
 {% if site.anchorjs %}
-<!-- async load function -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>
+  anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+</script>
+<!-- async load function -->
+<!--<script>
     function async(u, c) {
         var d = document, t = 'script',
             o = d.createElement(t),
@@ -199,9 +201,9 @@ layout: default
         }
         s.parentNode.insertBefore(o, s);
     }
-</script>
+</script>-->
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
+<!--<script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
         anchors.options = {
             visible: 'always',
@@ -210,7 +212,7 @@ layout: default
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
-</script>
+</script>-->
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
