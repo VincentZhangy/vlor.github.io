@@ -4,7 +4,7 @@ title:     	Spring Boot 之 MongoDB
 subtitle:    "\"Spring Boot 之 MongoDB\""
 date:       2017-09-30
 author:     Mr Chang
-header-img: img/post-bg-e2e-ux.jpg
+header-img: img/bg_154.png
 catalog: true
 tags:
     - Spring Boot
@@ -46,16 +46,16 @@ Spring Boot中可以通过在`pom.xml`中加入`spring-boot-starter-data-mongodb
 若MongoDB的安装配置采用默认端口，那么在自动配置的情况下，我们不需要做任何参数配置，就能马上连接上本地的MongoDB。下面直接使用spring-data-mongodb来尝试对mongodb的存取操作。（记得mongod启动您的mongodb）
 
 1. 创建要存储的User实体，包含属性：id、username、age
-		
+
 		@Document
 		public class User {
-		
+
 		    @Id
 		    private Long id;
-		
+
 		    private String username;
 		    private Integer age;
-		
+
 		    public User(Long id, String username, Integer age) {
 		        this.id = id;
 		        this.username = username;
@@ -67,20 +67,20 @@ Spring Boot中可以通过在`pom.xml`中加入`spring-boot-starter-data-mongodb
 2. 它有以下几种注释：
 
 	* @Id - 文档的唯一标识，在mongodb中为ObjectId，它是唯一的，通过时间戳+机器标识+进程ID+自增计数器（确保同一秒内产生的Id不会冲突）构成。
-	
+
 	* @Document - 把一个java类声明为mongodb的文档，可以通过collection参数指定这个类对应的文档。
 	* @Document(collection="mongodb") mongodb对应表
-	
+
 	* @DBRef - 声明类似于关系数据库的关联关系。ps：暂不支持级联的保存功能，当你在本实例中修改了DERef对象里面的值时，单独保存本实例并不能保存DERef引用的对象，它要另外保存，如下面例子的Person和Account。
-	
+
 	* @Indexed - 声明该字段需要索引，建索引可以大大的提高查询效率。
-	
+
 	* @CompoundIndex - 复合索引的声明，建复合索引可以有效地提高多字段的查询效率。
-	
+
 	* @GeoSpatialIndexed - 声明该字段为地理信息的索引。
-	
+
 	* @Transient - 映射忽略的字段，该字段不会保存到mongodb。
-	
+
 	* @PersistenceConstructor - 声明构造函数，作用是把从数据库取出的数据实例化为对象。该构造函数传入的值为从DBObject中取出的数据
 
 3. 实现User的数据访问对象：UserRepository
@@ -94,29 +94,29 @@ Spring Boot中可以通过在`pom.xml`中加入`spring-boot-starter-data-mongodb
 		@RunWith(SpringJUnit4ClassRunner.class)
 		@SpringApplicationConfiguration(Application.class)
 		public class ApplicationTests {
-		
+
 		    @Autowired
 		    private UserRepository userRepository;
-		
+
 		    @Before
 		    public void setUp() {
 		        userRepository.deleteAll();
 		    }
-		
+
 		    @Test
 		    public void test() throws Exception {
-		
+
 		        // 创建三个User，并验证User总数
 		        userRepository.save(new User(1L, "didi", 30));
 		        userRepository.save(new User(2L, "mama", 40));
 		        userRepository.save(new User(3L, "kaka", 50));
 		        Assert.assertEquals(3, userRepository.findAll().size());
-		
+
 		        // 删除一个User，再验证User总数
 		        User u = userRepository.findOne(1L);
 		        userRepository.delete(u);
 		        Assert.assertEquals(2, userRepository.findAll().size());
-		
+
 		        // 删除一个User，再验证User总数
 		        u = userRepository.findByUsername("mama");
 		        userRepository.delete(u);
@@ -137,16 +137,15 @@ Spring Boot中可以通过在`pom.xml`中加入`spring-boot-starter-data-mongodb
 若使用mongodb 2.x，也可以通过如下参数配置，该方式不支持mongodb 3.x。
 
 	spring.data.mongodb.host=localhost spring.data.mongodb.port=27017
-	
+
 ## 客户端推荐
 客户端这里推荐使用：**[robomongo](https://robomongo.org/)**
 	![](http://cdn-blog.jetbrains.org.cn/17-9-27/65682824.jpg)
-	
-	
+
+
 ## 鸣谢
 
 **转载：http://www.jianshu.com/p/879caef9b0bc**
 
 
 ![](http://cdn-blog.jetbrains.org.cn/17-10-11/27911813.jpg)
-
