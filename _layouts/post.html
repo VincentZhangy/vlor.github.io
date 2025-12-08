@@ -330,8 +330,11 @@ layout: default
 
     /* 底部置顶按钮 */
     .toc-footer {
-        position: absolute;
-        padding-bottom: 15px;
+        position: fixed;
+        bottom: 15px;
+        right: 25px;
+        width: 56px;
+        height: 56px;
         border-top: 1px solid #e1e1e1;
         margin-top: 10px;
     }
@@ -356,9 +359,9 @@ layout: default
     }
 
     .toc-back-to-top:hover {
-        background: #007bff;
+        background: #17deff;
         color: white;
-        border-color: #007bff;
+        border-color: #17deff;
         transform: translateY(-1px);
         box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
     }
@@ -374,12 +377,12 @@ layout: default
     /* 移动端目录开关按钮 */
     .toc-mobile-toggle {
         position: fixed;
-        bottom: 25px;
+        bottom: 35px;
         right: 25px;
         width: 56px;
         height: 56px;
         border-radius: 50%;
-        background: #007bff;
+        background: #17deff;
         color: white;
         border: none;
         box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
