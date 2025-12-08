@@ -98,7 +98,9 @@ layout: default
                 <center>
                     <div id="cyReward" role="cylabs" data-use="reward"></div>
                 </center>
-
+                <div class="col-md-3">
+                    <nav class="toc" id="toc-container"></nav>
+                </div>
                 <script
                     src="https://giscus.app/client.js"
                     data-repo="VincentZhangy/vlor.github.io"
@@ -289,7 +291,96 @@ layout: default
     })();
 </script>-->
 <!-- disqus 公共JS代码 end -->
-{% endif %} {% if site.anchorjs %}
+{% endif %}
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+<script>
+    // 替换原来的AnchorJS初始化代码
+    document.addEventListener("DOMContentLoaded", function () {
+        // 删除AnchorJS代码:
+        // anchors.options = { ... };
+        // anchors.add();
+
+        // 使用tocbot
+        tocbot.init({
+            // 文章内容容器
+            contentSelector: "#article-content",
+
+            // 目录容器
+            tocSelector: "#toc-container",
+
+            // 要抓取的标题选择器
+            headingSelector: "h1, h2, h3, h4",
+
+            // 滚动时高亮当前章节
+            headingsOffset: 100,
+            scrollSmoothOffset: -80,
+
+            // 移动端优化
+            collapseDepth: 6,
+            orderedList: false,
+
+            // 跳过某些标题
+            ignoreSelector: ".no-toc, .exclude",
+
+            // 自定义class
+            extraListClasses: "toc-list",
+            extraLinkClasses: "toc-link",
+
+            // 激活的class
+            activeLinkClass: "is-active-link",
+            isCollapsedClass: "is-collapsed",
+            collapseClass: "toc-collapsed",
+
+            // 滚动阈值
+            scrollEndCallback: function (e) {
+                console.log("到达底部");
+            },
+        });
+
+        // 移动端目录开关（可选）
+        addMobileTocToggle();
+    });
+
+    // 移动端目录开关功能
+    function addMobileTocToggle() {
+        const tocContainer = document.getElementById("toc-container");
+        const toggleBtn = document.createElement("button");
+
+        toggleBtn.innerHTML = "📖 目录";
+        toggleBtn.className = "toc-mobile-toggle d-md-none";
+        toggleBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+  `;
+
+        document.body.appendChild(toggleBtn);
+
+        toggleBtn.addEventListener("click", function () {
+            tocContainer.classList.toggle("mobile-show");
+        });
+
+        // 点击目录外关闭
+        document.addEventListener("click", function (e) {
+            if (!tocContainer.contains(e.target) && e.target !== toggleBtn) {
+                tocContainer.classList.remove("mobile-show");
+            }
+        });
+    }
+</script>
+{% if site.anchorjs %}
 <!-- async load function -->
 <script>
     function async(u, c) {
