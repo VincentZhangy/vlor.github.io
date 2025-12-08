@@ -213,20 +213,6 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
-                <div class="toc-footer">
-                    <button class="toc-back-to-top" id="toc-back-to-top">
-                        <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path d="M18 15l-6-6-6 6" />
-                        </svg>
-                    </button>
-                </div>
             </div>
 
             <!-- Side Catalog Container -->
@@ -323,37 +309,6 @@ layout: default
         }
         s.parentNode.insertBefore(o, s);
     }
-
-    const backToTopBtn = document.getElementById("toc-back-to-top");
-
-    // 回到顶部功能
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener("click", function () {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
-
-            // 移动端关闭目录
-            if (window.innerWidth < 993) {
-                tocNav.classList.remove("active");
-                document.body.style.overflow = "";
-            }
-        });
-    }
-
-    // 显示/隐藏回到顶部按钮
-    function updateBackToTopButton() {
-        if (backToTopBtn) {
-            if (window.scrollY > 300) {
-                backToTopBtn.style.opacity = "1";
-                backToTopBtn.style.visibility = "visible";
-            } else {
-                backToTopBtn.style.opacity = "0";
-                backToTopBtn.style.visibility = "hidden";
-            }
-        }
-    }
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <!--去掉标题前面的#号与链接-->
@@ -375,17 +330,6 @@ layout: default
             font-size: 1.1em;
             margin-top: -0.1em;
         }
-    }
-
-    /* 底部置顶按钮 */
-    .toc-footer {
-        position: fixed;
-        bottom: 15px;
-        right: 25px;
-        width: 56px;
-        height: 56px;
-        border-top: 1px solid #e1e1e1;
-        margin-top: 10px;
     }
 </style>
 {% endif %}
