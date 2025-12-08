@@ -159,7 +159,6 @@ layout: default
                         >
                             <path d="M18 15l-6-6-6 6" />
                         </svg>
-                        回到顶部
                     </button>
                 </div>
             </div>
@@ -220,6 +219,8 @@ layout: default
         border: 1px solid #e1e1e1;
         border-radius: 4px;
         padding: 15px;
+        overflow-y: auto;
+        max-height: calc(100vh - 160px);
         transition: all 0.3s ease;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
@@ -377,7 +378,7 @@ layout: default
     /* 移动端目录开关按钮 */
     .toc-mobile-toggle {
         position: fixed;
-        bottom: 35px;
+        bottom: 80px;
         right: 25px;
         width: 56px;
         height: 56px;
