@@ -134,21 +134,6 @@ layout: default
                         <button class="toc-close-btn d-lg-none">×</button>
                     </div>
                     <div class="toc-body" id="toc-body"></div>
-                    <div class="toc-footer">
-                        <button class="toc-back-to-top" id="toc-back-to-top">
-                            <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path d="M18 15l-6-6-6 6" />
-                            </svg>
-                            回到顶部
-                        </button>
-                    </div>
                 </nav>
                 <button class="toc-mobile-toggle d-lg-none">
                     <svg
@@ -162,6 +147,21 @@ layout: default
                         <path d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
+                <div class="toc-footer">
+                    <button class="toc-back-to-top" id="toc-back-to-top">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M18 15l-6-6-6 6" />
+                        </svg>
+                        回到顶部
+                    </button>
+                </div>
             </div>
 
             <div
@@ -330,7 +330,8 @@ layout: default
 
     /* 底部置顶按钮 */
     .toc-footer {
-        padding-top: 15px;
+        position: absolute;
+        padding-bottom: 15px;
         border-top: 1px solid #e1e1e1;
         margin-top: 10px;
     }
